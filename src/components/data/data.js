@@ -4,7 +4,7 @@ export const data = [
     image:
       "https://media.insider.in/image/upload/c_crop,g_custom/v1534421306/whue78i9bb4r8lyx1f1u.jpg",
     event_name: "Film Making Workshop",
-    category: "Workshop",
+    category: "workshop",
     date: "2024-04-15",
     start_time: "10:00 AM",
     end_time: "4:00 PM",

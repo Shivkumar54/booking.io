@@ -6,6 +6,7 @@ import { IoTime } from "react-icons/io5"
 import { FaRupeeSign } from "react-icons/fa"
 import { GiTicket } from "react-icons/gi"
 import { HiTicket } from "react-icons/hi2"
+import { Link } from "react-router-dom"
 const EventsUI = ({ item }) => {
   return (
     <div className="my-4">
@@ -54,9 +55,12 @@ const EventsUI = ({ item }) => {
             <HiTicket className="text-green-600" size={20} />{" "}
             {item?.tickets_available} available
           </h4>
-          <button className="text-sm rounded uppercase font-semibold bg-green-600 text-white px-6 py-3 mt-3">
+          <Link
+            to={`/events/event-detail/${item.id}`}
+            className="text-sm rounded uppercase font-semibold bg-green-600 text-white px-4 py-3 mt-3"
+          >
             Book your seat now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,12 +1,13 @@
 import React, { useState } from "react"
-import { data } from "../components/data/data"
 import EventsUI from "../components/content/EventsUI"
 import MarqueeUi from "../components/content/MarqueeUi"
 import { accData } from "../components/data/accordianData"
 import AccordianUi from "../components/content/AccordianUi"
 import { Link } from "react-router-dom"
+import { useThemeContext } from "../hooks/useThemeContext"
 const Home = () => {
-  const newdata = data.slice(0, 3)
+  const { events } = useThemeContext()
+  const newdata = events.slice(0, 3)
   const [index, setIndex] = useState(null)
   return (
     <div>

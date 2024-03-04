@@ -6,6 +6,7 @@ import Offers from "../../pages/Offers"
 import Login from "../../pages/Login"
 import Home from "../../pages/Home"
 import Events from "../../pages/Events"
+import EventDetails from "../../pages/EventDetails"
 
 export const Navlists = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const Navlists = createBrowserRouter([
         element: <Events />,
       },
       {
+        path: "/events/event-detail/:id",
+        element: <EventDetails />,
+      },
+      {
         path: "/bookings",
         element: <Bookings />,
       },
@@ -28,6 +33,7 @@ export const Navlists = createBrowserRouter([
         path: "/mybookings",
         element: <Mybookings />,
       },
+
       {
         path: "/offers",
         element: <Offers />,

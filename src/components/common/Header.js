@@ -4,7 +4,6 @@ import { useThemeContext } from "../../hooks/useThemeContext"
 const Header = () => {
   const lists = [
     { id: 0, title: "Events", path: "/events" },
-    // { id: 1, title: "Bookings", path: "/bookings" },
     { id: 2, title: "My bookings", path: "/mybookings" },
     { id: 3, title: "Offers", path: "/offers" },
     { id: 4, title: "Login", path: "/login" },
