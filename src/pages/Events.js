@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react"
 import EventsUI from "../components/content/EventsUI"
 import { useThemeContext } from "../hooks/useThemeContext"
 import Nodatafound from "../components/common/Nodatafound"
+import { data } from "../components/data/data"
 const Events = () => {
   const { events } = useThemeContext()
-  const [event, setEvent] = useState(events)
-  const [filteredEvents, setFilteredEvents] = useState(event)
+  const eData = events ? events : data
+  const [filteredEvents, setFilteredEvents] = useState(eData)
   const [userSearch, setUserSearch] = useState("")
 
   const handleChange = (e) => {
     setUserSearch(e.target.value.toLowerCase())
   }
   useEffect(() => {
-    const newFilteredData = events.filter(
+    const newFilteredData = eData?.filter(
       (item) =>
         item?.event_name.toLowerCase().includes(userSearch) ||
         item.category.toLowerCase().includes(userSearch) ||
@@ -20,7 +21,7 @@ const Events = () => {
         item.location.toLowerCase().includes(userSearch)
     )
     setFilteredEvents(newFilteredData)
-  }, [userSearch])
+  }, [userSearch, eData])
 
   return (
     <div>
@@ -38,11 +39,12 @@ const Events = () => {
         </form>
       </div>
       <div className="filter"></div>
-      {filteredEvents.length ? (
+      {filteredEvents && filteredEvents?.length ? (
         <div className="mt-20 px-12 w-full grid grid-cols-3 gap-5 mb-24">
-          {filteredEvents.map((event, indx) => {
-            return <EventsUI key={event?.id} item={event} />
-          })}
+          {filteredEvents &&
+            filteredEvents?.map((event) => {
+              return <EventsUI key={event?.id} item={event && event} />
+            })}
         </div>
       ) : (
         <Nodatafound userSearch={userSearch} />

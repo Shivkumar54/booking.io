@@ -5,9 +5,10 @@ import { accData } from "../components/data/accordianData"
 import AccordianUi from "../components/content/AccordianUi"
 import { Link } from "react-router-dom"
 import { useThemeContext } from "../hooks/useThemeContext"
+import { data } from "../components/data/data"
 const Home = () => {
   const { events } = useThemeContext()
-  const newdata = events.slice(0, 3)
+  const newdata = events ? events.slice(0, 3) : data.slice(0, 3)
   const [index, setIndex] = useState(null)
   return (
     <div>

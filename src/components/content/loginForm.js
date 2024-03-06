@@ -1,9 +1,21 @@
 import React, { useRef, useState } from "react"
+import { v4 as uuidv4 } from "uuid"
+
 import { useValidateCredientials } from "../../hooks/useValidateCredientials"
 import ThemeColors from "../constants/themeColors"
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { addUser } from "../../store/userSlice"
 
 const LoginForm = () => {
   const useTheme = ThemeColors()
+  const navigate = useNavigate()
+
+  const unqId = uuidv4()
+
+  const userId = unqId.slice(0, 7)
+
+  const dispatch = useDispatch()
 
   const [isSignIn, setIsSignIn] = useState(true)
   const [errMessage, setErrMessage] = useState(null)
@@ -20,19 +32,16 @@ const LoginForm = () => {
       passwordRef?.current?.value
     )
     if (!message) {
-      alert("Success")
-      console.log("Success")
-      const users = JSON.parse(localStorage.getItem("users")) || []
-
       const newUser = {
-        id: nameRef.current.value,
+        id: userId,
         name: nameRef.current.value,
         email: emailRef.current.value,
         password: passwordRef.current.value,
         bookingDetails: [],
       }
-
-      localStorage.setItem("users", JSON.stringify([...users, newUser]))
+      dispatch(addUser(newUser))
+      localStorage.setItem("users", JSON.stringify(newUser))
+      navigate("/")
     } else {
       console.log(message)
       setErrMessage(message)

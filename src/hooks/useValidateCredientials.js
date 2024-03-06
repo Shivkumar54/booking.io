@@ -10,7 +10,8 @@ export const useValidateCredientials = (name, email, password) => {
 
   if (!validateEmail) {
     return "Please Enter Valid Email"
-  } else if (!valiadtePassword) {
+  }
+  if (password && !valiadtePassword) {
     return "Please Enter Valid Password"
   }
   if (!validateName) return "Enter valid Name"

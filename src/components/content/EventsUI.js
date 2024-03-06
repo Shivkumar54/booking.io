@@ -30,7 +30,7 @@ const EventsUI = ({ item }) => {
             {item?.tickets_sold} sold
           </h4>
         </div>
-        <div className="flex justify-between items-center">
+        {/* <div className="flex justify-between items-center">
           <h4 className="text-base font-normal flex items-center gap-1 my-2">
             <FaRegCalendarAlt className="text-green-600" size={20} />{" "}
             {item?.date}
@@ -49,7 +49,7 @@ const EventsUI = ({ item }) => {
             <FaRupeeSign className="text-green-600" size={20} />
             {item?.ticket_price * 10} per one
           </h4>
-        </div>
+        </div> */}
         <div className="flex justify-between items-center">
           <h4 className="text-base font-semibold flex items-center gap-1 my-2">
             <HiTicket className="text-green-600" size={20} />{" "}

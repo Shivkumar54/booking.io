@@ -1,14 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { useThemeContext } from "../../hooks/useThemeContext"
+import NavElements from "../constants/NavElements"
 const Header = () => {
-  const lists = [
-    { id: 0, title: "Events", path: "/events" },
-    { id: 2, title: "My bookings", path: "/mybookings" },
-    { id: 3, title: "Offers", path: "/offers" },
-    { id: 4, title: "Login", path: "/login" },
-  ]
-
+  const lists = NavElements()
+  const userLogin = JSON.parse(localStorage.getItem("users"))
   const { theme, changeTheme } = useThemeContext()
   const handleTheme = () => {
     changeTheme()

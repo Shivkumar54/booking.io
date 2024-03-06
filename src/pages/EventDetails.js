@@ -11,16 +11,23 @@ import { useThemeContext } from "../hooks/useThemeContext"
 import { IoIosArrowBack } from "react-icons/io"
 import useFilterSimilarEvents from "../hooks/useFilterSimilarEvents"
 import ShowSimilarEvents from "../components/content/ShowSimilarEvents"
+import { data } from "../components/data/data"
+import { useSelector } from "react-redux"
 const EventDetails = () => {
   const { id } = useParams()
   const { events } = useThemeContext()
-  const [event, setEvent] = useState(events[id - 1])
+  const eData = events ? events : data
+  const [event, setEvent] = useState(eData[id - 1])
+
+  const userData = useSelector((store) => store.user)
+
+  const loggedIn = userData && Object.keys(userData).length > 0
 
   useEffect(() => {
-    setEvent(events[id - 1])
-  }, [id])
+    setEvent(eData[id - 1])
+  }, [id, eData])
 
-  const filteredData = useFilterSimilarEvents(events, event.id, event?.category)
+  const filteredData = useFilterSimilarEvents(eData, event.id, event?.category)
   return (
     <div>
       <Link className="text-base font-bold flex items-center " to="/events">
@@ -68,7 +75,7 @@ const EventDetails = () => {
             <span className="text-base font-medium flex items-center gap-2">
               <FaRupeeSign size={22} className="text-green-600" />{" "}
               <span className="text-3xl font-black ">
-                {event.ticket_price * 10}
+                {event?.ticket_price * 10}
               </span>{" "}
               per person
             </span>
@@ -80,9 +87,12 @@ const EventDetails = () => {
               available
             </span>
           </div>
-          <button className="text-sm rounded uppercase font-semibold bg-green-600 text-white px-4 py-3 mt-3">
+          <Link
+            to={loggedIn ? `/events/${id}/bookingpage` : `/login`}
+            className="text-sm rounded uppercase font-semibold bg-green-600 text-white px-4 py-3 mt-3"
+          >
             Reserve My Seat
-          </button>
+          </Link>
         </div>
       </div>
       <div className="similarEvent">
