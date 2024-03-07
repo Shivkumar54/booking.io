@@ -1,11 +1,11 @@
 import React from "react"
 import NoDataImage from "../images/nodata.svg"
-const Nodatafound = ({ userSearch }) => {
+const Nodatafound = ({ title, userSearch }) => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center h-[75dvh]">
       <img className="w-72 h-72" src={NoDataImage} alt="NoDataImage" />
       <h1 className="text-xl font-medium">
-        Looks like no data found for the result - {userSearch}
+        {title} - {userSearch}
       </h1>
     </div>
   )

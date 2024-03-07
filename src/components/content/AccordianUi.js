@@ -9,7 +9,7 @@ const AccordianUi = ({ data, setIndex, show }) => {
     <div className="my-2 shadow-lg px-4 py-6">
       <h4
         onClick={handleClick}
-        className="text-lg font-semibold mb-4 flex justify-between items-center"
+        className="text-lg font-semibold mb-4 flex cursor-pointer justify-between items-center"
       >
         {data?.question}{" "}
         {show ? <IoIosArrowUp size={25} /> : <IoIosArrowDown size={25} />}

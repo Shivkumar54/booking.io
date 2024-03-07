@@ -47,7 +47,10 @@ const Events = () => {
             })}
         </div>
       ) : (
-        <Nodatafound userSearch={userSearch} />
+        <Nodatafound
+          title="Looks like no data found for"
+          userSearch={userSearch}
+        />
       )}
     </div>
   )

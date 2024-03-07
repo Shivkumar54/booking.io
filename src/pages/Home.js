@@ -13,12 +13,12 @@ const Home = () => {
   return (
     <div>
       <div className="HeroContainer h-[70dvh] flex flex-col justify-center items-center  text-center">
-        <span className="text-9xl font-extrabold mb-5 ">Booking.io</span>
+        <span className="text-9xl font-extrabold mb-8 ">Booking.io</span>
         <p className="font-normal text-xl w-[900px]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
           exercitationem magnam reiciendis provident error eaque repellat,
           ducimus a eos illo alias hic illum, rem dolores culpa expedita quam id
-          assumenda?
+          assumenda.
         </p>
         <Link
           to="/events"

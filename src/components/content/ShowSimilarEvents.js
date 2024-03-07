@@ -15,7 +15,10 @@ const ShowSimilarEvents = ({ eventName, filteredData }) => {
           })}
         </div>
       ) : (
-        <Nodatafound userSearch={eventName} />
+        <Nodatafound
+          title="Looks like no similar items found"
+          userSearch={eventName}
+        />
       )}
     </div>
   )

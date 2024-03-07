@@ -1,9 +1,5 @@
 import React from "react"
-import { FaRegCalendarAlt } from "react-icons/fa"
 import { FaLocationDot } from "react-icons/fa6"
-import { BiSolidCategory } from "react-icons/bi"
-import { IoTime } from "react-icons/io5"
-import { FaRupeeSign } from "react-icons/fa"
 import { GiTicket } from "react-icons/gi"
 import { HiTicket } from "react-icons/hi2"
 import { Link } from "react-router-dom"
@@ -30,26 +26,6 @@ const EventsUI = ({ item }) => {
             {item?.tickets_sold} sold
           </h4>
         </div>
-        {/* <div className="flex justify-between items-center">
-          <h4 className="text-base font-normal flex items-center gap-1 my-2">
-            <FaRegCalendarAlt className="text-green-600" size={20} />{" "}
-            {item?.date}
-          </h4>
-          <h4 className="text-base font-normal flex items-center gap-1 my-2">
-            <BiSolidCategory className="text-green-600" size={20} />{" "}
-            {item?.category}
-          </h4>
-        </div>
-        <div className="flex justify-between items-center">
-          <h4 className="text-base font-normal flex items-center gap-1 my-2">
-            <IoTime className="text-green-600" size={20} /> {item?.start_time} -{" "}
-            {item.end_time}
-          </h4>
-          <h4 className="text-base font-normal flex items-center gap-1 my-2">
-            <FaRupeeSign className="text-green-600" size={20} />
-            {item?.ticket_price * 10} per one
-          </h4>
-        </div> */}
         <div className="flex justify-between items-center">
           <h4 className="text-base font-semibold flex items-center gap-1 my-2">
             <HiTicket className="text-green-600" size={20} />{" "}
