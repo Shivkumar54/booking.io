@@ -4,19 +4,22 @@ import { useSelector } from "react-redux"
 import MyBookingUi from "../components/content/MyBookingUi"
 const Mybookings = () => {
   const { bookingDetails } = useSelector((store) => store.user)
-  if (!bookingDetails) {
+  if (!bookingDetails.length) {
     return (
-      <div className="flex items-center justify-center">
+      <div className="flex w-full h-[80dvh] items-center justify-center flex-wrap">
         <Nodatafound
           title="Looks like no Booking found"
-          userSearch="My booking"
+          userSearch="Book Now"
         />
       </div>
     )
   }
   return (
-    <div className="h-[80dvh] mt-9 px-24">
-      <div className="flex relative justify-between gap-9">
+    <div className="h-max mt-9 relative mb-24 lg:mb-48 lg:px-12">
+      <h1 className="text-2xl mb-5 lg:mb-10 uppercase tracking-widest font-medium">
+        Confirmed Tickets{" "}
+      </h1>
+      <div className="grid grid-col-1 lg:grid-cols-2 gap-12">
         {bookingDetails &&
           bookingDetails.map((item, indx) => {
             return <MyBookingUi item={item} />

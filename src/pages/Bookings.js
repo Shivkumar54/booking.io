@@ -60,23 +60,20 @@ const Bookings = () => {
   }
 
   return (
-    <div className="flex justify-center items-center gap-9 h-[80dvh]">
-      <div className="eventDetails w-[100%]">
+    <div className="lg:flex justify-center items-center gap-9 mt-8 mb-24 lg:mt-0 lg:mb-0 lg:h-[80dvh]">
+      <div className="eventDetails w-[100%] mb-4">
         <img src={event.image} alt="" />
       </div>
       <div className="form w-[100%]">
-        <h2>Booking on way</h2>
-        <p className="text-lg font-normal mt-3">
-          You're few steps away for the reservation
+        <h2 className="text-3xl mb-2">Booking on way</h2>
+        <p className="text-base font-normal mt-1">
+          Tickets will be recieved in email you enter
         </p>
-        <p className="text-sm font-normal mt-1">
-          Please Note Enter the Email in which you will get pass details
-        </p>
-        <form onSubmit={CompletePayment} className="mt-6 pr-24">
+        <form onSubmit={CompletePayment} className="mt-6 lg:pr-24">
           <input
             ref={emailRef}
             type="email"
-            className="text-base font-normal border  bg-transparent outline-none indent-3 py-4 w-full mb-5 rounded"
+            className="text-base font-normal border bg-transparent outline-none indent-3 py-4 w-full mb-5 rounded"
             placeholder="Enter Email"
           />
           <input
@@ -87,7 +84,7 @@ const Bookings = () => {
           />
           <span className="text-base text-red-600">{message}</span>
           <br />
-          <button className="text-xl bg-green-600 text-white font-bold mt-4 w-48 h-14 rounded-sm uppercase">
+          <button className="text-xl bg-green-600 text-white font-bold mt-4 w-full lg:w-48 h-14 rounded-sm uppercase">
             {" "}
             Pay {event?.ticket_price * 10}
           </button>

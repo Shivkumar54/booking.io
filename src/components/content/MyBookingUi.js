@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { BiSolidCategory } from "react-icons/bi"
 import { FaRegCalendarAlt } from "react-icons/fa"
 import QRCode from "react-qr-code"
-import { IoCloseCircle } from "react-icons/io5"
 const MyBookingUi = ({ item }) => {
   const [showQR, setShowQR] = useState(false)
 
@@ -12,20 +11,24 @@ const MyBookingUi = ({ item }) => {
 
   return (
     <>
-      <div className="flex gap-4">
-        <div className="img">
-          <img
-            src={item?.event?.image}
-            className="w-36 h-36 object-cover"
-            alt={item?.event?.event_name}
-          />
+      <div className="lg:flex lg:gap-4 lg:items-center">
+        <div className="img ">
+          {!showQR ? (
+            <img
+              src={item?.event?.image}
+              className="mb-5 w-[343px] h-[343px] lg:w-64 lg:h-64  object-cover"
+              alt={item?.event?.event_name}
+            />
+          ) : (
+            <QRCode className="w-full h-full mb-5" value={item.bookingId} />
+          )}
         </div>
         <div className="txt">
           <h5 className="tracking-widest uppercase text-sm font-medium">
             {item?.event?.organizer}
           </h5>
           <h1 className="text-2xl font-bold my-2">{item?.event?.event_name}</h1>
-          <div className="flex justify-between mt-2">
+          <div className="flex justify-between gap-6 mt-2">
             <h5 className="flex items-center gap-2 text-base font-medium">
               <FaRegCalendarAlt className="text-green-600" />{" "}
               {item?.event?.date}
@@ -34,25 +37,19 @@ const MyBookingUi = ({ item }) => {
               <BiSolidCategory className="text-green-600" /> {item?.event?.date}
             </h5>
           </div>
+          <h5 className="flex items-center justify-between gap-2 text-base font-bold uppercase mt-2">
+            Conirmation Code
+            <span className="uppercase tracking-widest">{item.bookingId}</span>
+          </h5>
+
           <button
             onClick={toggleQRModal}
-            className="bg-green-600 text-white text-sm uppercase px-6 py-2 mt-4 rounded"
+            className="bg-green-600 text-white w-full text-base uppercase px-6 py-4 mt-4 rounded"
           >
-            Show QR Code
+            {showQR ? "Close Qr code" : "Show QR Code"}
           </button>
         </div>
       </div>
-      {showQR && (
-        <div className="backdrop-blur-3xl absolute flex flex-col h-[75dvh] w-full items-center justify-center">
-          <QRCode className=" w-64 h-64" value={item.bookingId} />
-          <h1 className="text-lg font-medium uppercase tracking-wider my-4">
-            {item.bookingId}
-          </h1>
-          <span onClick={toggleQRModal}>
-            <IoCloseCircle />
-          </span>
-        </div>
-      )}
     </>
   )
 }

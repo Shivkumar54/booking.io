@@ -5,10 +5,10 @@ const MarqueeUi = () => {
   const data = marqueeData
   return (
     <div className="">
-      <h1 className="mb-14 font-medium text-lg uppercase tracking-widest ">
+      <h1 className=" mb-8 lg:mb-14 font-medium text-lg uppercase tracking-widest ">
         Peoples we have associated with{" "}
       </h1>
-      <div className="px-14 mb-5">
+      <div className=" px-0 lg:px-14 mb-5">
         <Marquee speed={80}>
           {data.map((img, index) => {
             return (
@@ -22,7 +22,7 @@ const MarqueeUi = () => {
           })}
         </Marquee>
       </div>
-      <div className="px-14 mb-5">
+      <div className="px-0 lg:px-14 mb-5">
         <Marquee speed={80} direction="right">
           {data.map((img, index) => {
             return (

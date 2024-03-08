@@ -12,9 +12,11 @@ const Home = () => {
   const [index, setIndex] = useState(null)
   return (
     <div>
-      <div className="HeroContainer h-[70dvh] flex flex-col justify-center items-center  text-center">
-        <span className="text-9xl font-extrabold mb-8 ">Booking.io</span>
-        <p className="font-normal text-xl w-[900px]">
+      <div className="px-0 mb-12 h-[75dvh] flex flex-col justify-center items-center text-center lg:px-48">
+        <span className="text-4xl lg:text-6xl font-extrabold mb-8 lg:text-9xl ">
+          Booking.io
+        </span>
+        <p className="text-base px-3 font-normal lg:text-lg w-full">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
           exercitationem magnam reiciendis provident error eaque repellat,
           ducimus a eos illo alias hic illum, rem dolores culpa expedita quam id
@@ -32,27 +34,25 @@ const Home = () => {
         <h1 className="mb-8 font-medium text-lg uppercase tracking-widest ">
           New Events on cards{" "}
         </h1>
-        <div className="px-12 w-full grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:px-12 w-full lg:grid lg:grid-cols-3 gap-5">
           {newdata &&
             newdata.map((item) => {
               return <EventsUI item={item} key={item.id} />
             })}
         </div>
       </div>
-      <div className="scoller mb-48">
+      <div className="scoller mb-24 lg:mb-48">
         <MarqueeUi />
       </div>
-      <div className="accordian flex justify-center items-end gap-5 mb-28">
+      <div className=" lg:flex justify-center items-end gap-5 mb-12 lg:mb-28">
         <div className="image w-[100%]">
-          <h1 className="text-9xl">FAQ?</h1>
-          <p className="text-base font-normal mt-4 pr-8">
+          <h1 className=" tetxt-6xl lg:text-9xl">FAQ?</h1>
+          <p className="text-base font-normal mt-4  lg:pr-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-            quia, tempore, delectus recusandae numquam atque nostrum aperiam
-            nisi beatae odio est, ea nobis molestias! Aut cum corporis quas
-            ipsam labore eos nobis aspernatur earum vero?
+            quia, tempore, delectus recusandae numquam.
           </p>
         </div>
-        <div className="accord w-[100%]">
+        <div className=" w-full">
           {accData.map((item, indx) => {
             return (
               <AccordianUi

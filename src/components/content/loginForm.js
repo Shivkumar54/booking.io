@@ -17,7 +17,7 @@ const LoginForm = () => {
 
   const dispatch = useDispatch()
 
-  const [isSignIn, setIsSignIn] = useState(true)
+  const [isSignIn, setIsSignIn] = useState(false)
   const [errMessage, setErrMessage] = useState(null)
 
   const nameRef = useRef(null)

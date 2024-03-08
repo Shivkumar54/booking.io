@@ -20,7 +20,7 @@ const Body = () => {
   }, [])
 
   return (
-    <div style={useTheme}>
+    <div className="px-4" style={useTheme}>
       <Header />
       <div className="pt-20 container mx-auto">
         <Outlet />
