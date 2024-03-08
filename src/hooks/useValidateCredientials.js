@@ -6,7 +6,7 @@ export const useValidateCredientials = (name, email, password) => {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/.test(
       password
     )
-  const validateName = /^[a-zA-Z]+$/.test(name)
+  const validateName = /^[a-zA-Z ]+$/.test(name)
 
   if (!validateEmail) {
     return "Please Enter Valid Email"

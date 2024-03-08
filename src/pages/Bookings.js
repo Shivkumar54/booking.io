@@ -72,7 +72,7 @@ const Bookings = () => {
         <form onSubmit={CompletePayment} className="mt-6 lg:pr-24">
           <input
             ref={emailRef}
-            type="email"
+            type="text"
             className="text-base font-normal border bg-transparent outline-none indent-3 py-4 w-full mb-5 rounded"
             placeholder="Enter Email"
           />
