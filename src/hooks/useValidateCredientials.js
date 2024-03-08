@@ -11,8 +11,11 @@ export const useValidateCredientials = (name, email, password) => {
   if (!validateEmail) {
     return "Please Enter Valid Email"
   }
-  if (password && !valiadtePassword) {
-    return "Please Enter Valid Password"
+  if (!valiadtePassword) {
+    return `
+    Password should include
+    - One Special Character, One Capital Letter, One Number, length should be more or equal to 8 
+    `
   }
   if (!validateName) return "Enter valid Name"
 
