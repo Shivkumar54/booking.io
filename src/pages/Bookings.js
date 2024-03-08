@@ -23,7 +23,7 @@ const Bookings = () => {
 
   const CompletePayment = (e) => {
     e.preventDefault()
-    const message = useValidateCredientials(null, emailRef.current.value, null)
+    const message = useValidateCredientials("", emailRef.current.value, "")
     const noOftickets = personRef.current.value
     if (message) {
       setMessage(message)
