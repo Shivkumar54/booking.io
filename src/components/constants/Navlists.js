@@ -10,6 +10,7 @@ import Events from "../../pages/Events"
 import EventDetails from "../../pages/EventDetails"
 import Profile from "../../pages/Profile"
 import { useSelector } from "react-redux"
+import Nodatafound from "../common/Nodatafound"
 
 const Navlists = () => {
   // const userData = useSelector((store) => store.user)
@@ -17,6 +18,7 @@ const Navlists = () => {
     {
       path: "/",
       element: <Body />,
+      errorElement: <Nodatafound />,
       children: [
         {
           path: "/",
@@ -27,7 +29,7 @@ const Navlists = () => {
           element: <Events />,
         },
         {
-          path: "/events/event-detail/:id",
+          path: "/events/:id",
           element: <EventDetails />,
         },
         {

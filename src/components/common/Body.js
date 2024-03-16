@@ -5,10 +5,10 @@ import Footer from "./Footer"
 import ThemeColors from "../constants/themeColors"
 import { useDispatch } from "react-redux"
 import { addUser } from "../../store/userSlice"
+import Breadcrumbs from "../constants/Breadcrumbs"
 
 const Body = () => {
   const useTheme = ThemeColors()
-
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,7 +22,10 @@ const Body = () => {
   return (
     <div className="px-4" style={useTheme}>
       <Header />
-      <div className="pt-20 container mx-auto">
+      <div className="pt-[4.5rem] mb-4 bradcrumbs">
+        <Breadcrumbs />
+      </div>
+      <div className=" container mx-auto">
         <Outlet />
       </div>
       <Footer />

@@ -32,7 +32,7 @@ const EventsUI = ({ item }) => {
             {item?.tickets_available} available
           </h4>
           <Link
-            to={`/events/event-detail/${item.id}`}
+            to={`/events/${item.id}`}
             className="text-sm rounded uppercase font-semibold bg-green-600 text-white px-4 py-3 mt-3"
           >
             Book your seat now

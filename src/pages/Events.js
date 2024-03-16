@@ -26,7 +26,7 @@ const Events = () => {
   return (
     <div className="">
       <div className="w-full flex items-center justify-center">
-        <form className="searchbar w-[50rem] mt-10 mb-5 lg:mb-10 ">
+        <form className="searchbar w-[50rem] mt-0 mb-5 lg:my-10 ">
           <h4 className=" text-2xl mb-3 font-semibold lg:font-extrabold lg:mb-5">
             Search Events
           </h4>

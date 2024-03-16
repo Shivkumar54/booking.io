@@ -32,7 +32,7 @@ const Header = () => {
     <div className="relative">
       <div
         style={theme === "light" ? lightTheme : darkTheme}
-        className="container mx-auto w-full fixed h-[12dvh] z-30 flex items-center justify-between"
+        className="container mx-auto w-full fixed h-[8dvh] md:lg:h-[12dvh] z-30 flex items-center justify-between"
       >
         <div className="logo w-full lg:w-[72] py-4 lg:py-0">
           <Link to="/">
@@ -83,7 +83,10 @@ const Header = () => {
           className="absolute z-20 shadow-sm pt-20 pb-10 w-full h-[88]"
         >
           {showMenu && (
-            <ul className=" md:lg:hidden py-6">
+            <ul
+              style={theme === "light" ? lightTheme : darkTheme}
+              className="z-30 fixed w-full md:lg:hidden py-6"
+            >
               {lists.map((item) => {
                 return (
                   <Link

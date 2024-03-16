@@ -25,19 +25,17 @@ const EventDetails = () => {
 
   useEffect(() => {
     setEvent(eData[id - 1])
+    window.scrollTo(0, 0)
   }, [id, eData])
 
   const filteredData = useFilterSimilarEvents(eData, event.id, event?.category)
   return (
     <div>
-      <Link className="text-base font-bold flex items-center mb-5" to="/events">
-        <IoIosArrowBack /> Go back
-      </Link>
-      <div className=" lg:flex items-center gap-5 justify-around lg:h-[65dvh] mb-12">
+      <div className=" lg:flex items-center gap-5 justify-around lg:h-[60dvh] mb-12">
         <div className="img w-full mb-4">
           <img
             src={event?.image}
-            className="w-[100%]"
+            className="w-[100%] h-[30dvh] object-cover md:lg:h-[55dvh]"
             alt={event?.event_name}
           />
         </div>
@@ -45,7 +43,7 @@ const EventDetails = () => {
           <span className=" text-sm mb-2 lg:text-base uppercase tracking-widest flex items-center gap-2">
             {event?.organizer}
           </span>
-          <h1 className="text-3xl lg:text-5xl mb-3 font-extrabold">
+          <h1 className="text-xl lg:text-3xl mb-3 font-extrabold">
             {event?.event_name}
           </h1>
           <p className="text-base lg:text-lg font-normal my-3">
